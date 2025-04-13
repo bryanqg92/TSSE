@@ -30,16 +30,47 @@ SPDX-License-Identifier: MIT
 #include "unity.h"
 
 /* === Macros definitions ====================================================================== */
-// === SoilData ===
-#define TEST_NITROGEN_HEX         0x64, 0x00
-#define TEST_PHOSPHORUS_HEX       0xC8, 0x00
-#define TEST_POTASSIUM_HEX        0x2C, 0x01
-#define TEST_TEMPERATURE_HEX      0x00, 0x00, 0xCC, 0x41
-#define TEST_MOISTURE_HEX         0x00, 0x00, 0x48, 0x42
-#define TEST_PH_HEX               0x00, 0x00, 0xE0, 0x40
-#define TEST_CONDUCTIVITY_HEX     0xDC, 0x05
+/**
+ * @brief Definiciones de valores hexadecimales para pruebas de datos de suelo
+ *
+ * @details Estos macros contienen valores hexadecimales para pruebas de
+ * diferentes parámetros del suelo:
+ *
+ * - TEST_NITROGEN_HEX:     Valor 0x0064 (100 decimal) como uint16_t
+ * - TEST_PHOSPHORUS_HEX:   Valor 0x00C8 (200 decimal) como uint16_t
+ * - TEST_POTASSIUM_HEX:    Valor 0x012C (300 decimal) como uint16_t
+ * - TEST_TEMPERATURE_HEX:  Valor 0x41CC0000 (25.5) como float
+ * - TEST_MOISTURE_HEX:     Valor 0x42480000 (50.0) como float
+ * - TEST_PH_HEX:           Valor 0x40E00000 (7.0) como float
+ * - TEST_CONDUCTIVITY_HEX: Valor 0x05DC (1500 decimal) como uint16_t
+ */
 
-// === GNSSData ===
+#define TEST_NITROGEN_HEX 0x64, 0x00
+#define TEST_PHOSPHORUS_HEX 0xC8, 0x00
+#define TEST_POTASSIUM_HEX 0x2C, 0x01
+#define TEST_TEMPERATURE_HEX 0x00, 0x00, 0xCC, 0x41
+#define TEST_MOISTURE_HEX 0x00, 0x00, 0x48, 0x42
+#define TEST_PH_HEX 0x00, 0x00, 0xE0, 0x40
+#define TEST_CONDUCTIVITY_HEX 0xDC, 0x05
+/**
+ * @defgroup TEST_GEO_TIME_CONSTANTS Constantes para pruebas de geolocalización
+ * y tiempo
+ * @brief Conjunto de macros con valores hexadecimales para pruebas
+ *
+ * @details Estos macros contienen valores hexadecimales para pruebas de
+ * geolocalización y tiempo:
+ *
+ * - TEST_ALTITUDE_HEX:    Valor 0x42C80000 (100.0f como float)
+ * - TEST_LATITUDE_HEX:    Valor 0xC2080000 (-34.0f como float)
+ * - TEST_LONGITUDE_HEX:   Valor 0xC2680000 (-58.0f como float)
+ * - TEST_YEAR_HEX:        Valor 0x07E7 (2023 como uint16_t)
+ * - TEST_MONTH_HEX:       Valor 0x0A (10 como uint8_t, octubre)
+ * - TEST_DAY_HEX:         Valor 0x01 (1 como uint8_t)
+ * - TEST_HOUR_HEX:        Valor 0x0C (12 como uint8_t)
+ * - TEST_MINUTE_HEX:      Valor 0x1E (30 como uint8_t)
+ * - TEST_CATEGORY_HEX:    Valor 0x01 (1 como uint8_t)
+ * @{
+ */
 #define TEST_ALTITUDE_HEX         0x00, 0x00, 0xC8, 0x42
 #define TEST_LATITUDE_HEX         0x00, 0x00, 0x08, 0xC2
 #define TEST_LONGITUDE_HEX        0x00, 0x00, 0x68, 0xC2
@@ -48,8 +79,6 @@ SPDX-License-Identifier: MIT
 #define TEST_DAY_HEX              0x01
 #define TEST_HOUR_HEX             0x0C
 #define TEST_MINUTE_HEX           0x1E
-
-// === Category ===
 #define TEST_CATEGORY_HEX         0x01
 
 #define NO_DATA_RECEIVED 0
@@ -58,6 +87,7 @@ SPDX-License-Identifier: MIT
 #define NO_LDO_REGULATOR false
 /* === Private data type declarations ========================================================== */
 static uint16_t *port_adress;
+
 static uint8_t TEST_LORA_BUFFER_HEX[] = {
     TEST_NITROGEN_HEX,
     TEST_PHOSPHORUS_HEX,
@@ -111,6 +141,22 @@ void test_lora_init_ok_configura_y_loggea_info(void)
     lora_init();
 }
 
+/**
+ * @brief Prueba para la funcionalidad de decodificación de datos LoRa
+ *
+ * @details Esta prueba verifica que la función decode_lora_data extraiga
+ * correctamente datos de sensores del suelo, información de posicionamiento
+ * GNSS y datos de categoría de un buffer de paquete LoRa. Utiliza un buffer de
+ * prueba predefinido (TEST_LORA_BUFFER_HEX) y comprueba que todos los campos se
+ * extraigan correctamente con sus valores esperados:
+ * - Datos del suelo: nitrógeno (100), fósforo (200), potasio (300), temperatura
+ * (25.5°C), humedad (50.0%), pH (7.0), conductividad (1500)
+ * - Datos GNSS: altitud (100.0m), coordenadas (-34.0, -58.0), fecha
+ * (2023-10-01), hora (12:30)
+ * - Categoría: 1
+ *
+ * @test Valida la función decode_lora_data
+ */
 
 void test_decode_lora_data(void)
 {
@@ -140,6 +186,16 @@ void test_decode_lora_data(void)
     
 }
 
+/**
+ * @brief Prueba que verifica el comportamiento de task_lora_rx cuando no hay
+ * datos recibidos
+ *
+ * @details Esta prueba valida que cuando LoRaReceive devuelve NO_DATA_RECEIVED,
+ *          la función task_lora_rx debe registrar un mensaje de depuración
+ *          indicando que no se recibieron datos.
+ *
+ * @test Verifica la correcta gestión cuando no hay datos disponibles
+ */
 void test_task_lora_rx_should_not_receive_data(void)
 {
     LoRaReceive_IgnoreAndReturn(NO_DATA_RECEIVED);   
