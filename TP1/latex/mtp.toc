@@ -1,0 +1,24 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
+\contentsline {section}{\numberline {2}Asignaciones}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Responsable}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Contratista}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Alcances}{3}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Dispositivo Transmisor (ESP32)}{3}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Dispositivo Receptor (STM32)}{3}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Comunicación LoRa}{3}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Interfaz de Usuario:}{3}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Precondiciones (externas)}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Precondiciones (internas)}{4}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Bases del test}{4}{section.3}%
+\contentsline {section}{\numberline {4}Estrategia general del test}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}caracteristicas de calidad}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Asignación de importancia relativa de las características de calidad en cada nivel de prueba}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Asignación de niveles de prueba a las características de calidad}{5}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Estrategia por nivel de prueba}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Division del sistema en subsistemas}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Importancia relativa de los subsistemas }{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Determinación de la importancia de test por combinaciones de subsistema y características de calidad}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Determinación de las técnicas de test a ser utilizadas}{8}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Apéndices}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Diagrama de flujo del sistema}{10}{subsection.6.1}%

@@ -1,0 +1,35 @@
+---
+:source:
+  :file: test/test_app_lora.c
+  :dirname: test
+  :basename: test_app_lora.c
+:successes:
+- :test: test_lora_init_falla_logger_error
+  :line: 95
+  :message: ''
+  :unity_test_time: 0
+- :test: test_lora_init_ok_configura_y_loggea_info
+  :line: 103
+  :message: ''
+  :unity_test_time: 0
+- :test: test_decode_lora_data
+  :line: 115
+  :message: ''
+  :unity_test_time: 0
+- :test: test_task_lora_rx_should_not_receive_data
+  :line: 143
+  :message: ''
+  :unity_test_time: 0
+- :test: test_task_lora_rx_should_receive_data
+  :line: 165
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 5
+  :passed: 5
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.00291666399789392
