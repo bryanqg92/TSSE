@@ -28,6 +28,7 @@ jobs:
         run: pre-commit/actions@v3.0.0
       - name: Run Unit Tests
         run: ceedling clobber gcov:all 
+      - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
