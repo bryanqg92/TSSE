@@ -80,7 +80,7 @@ void test_prender_y_apagar_multiples_leds (void) {
     LedsTurnOnSingle(8);
     LedsTurnOnSingle(6);
     LedsTurnOnSingle(3);
-    LedsTurnOnSingle(21);
+    LedsTurnOnSingle(1);
 
     TEST_ASSERT_EQUAL_HEX16(0xA5A5, leds_virtuales);
 }
