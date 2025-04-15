@@ -17,6 +17,7 @@
   :use_deep_preprocessor: :none  # options are :none, :mocks, :tests, or :all
   :use_backtrace: :simple        # options are :none, :simple, or :gdb
   :use_decorators: :auto         # decorate Ceedling's output text. options are :auto, :all, or :none
+  :use_auxiliary_dependencies: TRUE
 
   # tweak the way ceedling handles automatic tasks
   :build_root: build
@@ -53,11 +54,11 @@
 # details on how to use it.
 :plugins:
   :load_paths:
-    - TP4/vendor/ceedling/plugins
+    #- TP4/vendor/ceedling/plugins
   :enabled:
     #- beep                           # beeps when finished, so you don't waste time waiting for ceedling
     - module_generator                # handy for quickly creating source, header, and test templates
-    - stdout_pretty_tests_report
+    #- stdout_pretty_tests_report
     - gcov                           # test coverage using gcov. Requires gcc, gcov, and a coverage analyzer like gcovr
     #- bullseye                       # test coverage using bullseye. Requires bullseye for your platform
     #- command_hooks                  # write custom actions to be called at different points during the build process
@@ -68,10 +69,10 @@
 
     # Report options (You'll want to choose one stdout option, but may choose multiple stored options if desired)
     #- report_build_warnings_log
-    #- report_tests_gtestlike_stdout
-    #- report_tests_ide_stdout
+    - report_tests_gtestlike_stdout
+    - report_tests_ide_stdout
     #- report_tests_log_factory
-    #- report_tests_pretty_stdout
+    - report_tests_pretty_stdout
     #- report_tests_raw_output_log
     #- report_tests_teamcity_stdout
 
