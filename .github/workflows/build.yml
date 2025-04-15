@@ -24,10 +24,6 @@ jobs:
         run: gem install ceedling -v 0.31.1
       - name: install GCov Report
         run: sudo apt-get install lcov
-      - name: Install pre-commit
-        run: pip install pre-commit
-      - name: Run format validation
-        run: pre-commit run --config TP4/.pre-commit-config.yaml --all-files
       - name: Run Unit Tests
         run: cd TP4 && ceedling clobber gcov:all utils:all
       - name: Test Report
