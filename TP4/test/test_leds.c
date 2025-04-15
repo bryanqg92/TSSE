@@ -75,14 +75,14 @@ void test_prender_y_apagar_multiples_leds (void) {
     LedsTurnOffAll();
     LedsTurnOnSingle(16);
     LedsTurnOnSingle(14);
-    LedsTurnOnSingle(11);
-    LedsTurnOnSingle(9);
+    LedsTurnOnSingle(12);
+    LedsTurnOnSingle(10);
     LedsTurnOnSingle(8);
     LedsTurnOnSingle(6);
-    LedsTurnOnSingle(3);
-    LedsTurnOnSingle(1);
+    LedsTurnOnSingle(4);
+    LedsTurnOnSingle(2);
 
-    TEST_ASSERT_EQUAL_HEX16(0xA5A5, leds_virtuales);
+    TEST_ASSERT_EQUAL_HEX16(0xAAAA, leds_virtuales);
 }
 
 //@test Prender todos los LEDs de una vez.
