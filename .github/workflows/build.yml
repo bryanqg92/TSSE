@@ -25,7 +25,7 @@ jobs:
       - name: install GCov Report
         run: sudo apt-get install lcov
       - name: Run format validation
-        uses: pre-commit/actions@v3.0.0
+        run: pre-commit run --config TP4/.pre-commit-config.yaml --all-files
       - name: Run Unit Tests
         run: ceedling clobber gcov:all utils:all
       - name: Test Report
