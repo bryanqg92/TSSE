@@ -24,7 +24,9 @@ jobs:
       - name: Install Ceedling
         run: gem install ceedling -v 0.31.1
       - name: install GCov Report
-        run: sudo apt-get install lcov
+        run: |
+          sudo apt-get install lcov gcovr
+          pip install gcovr
       - name: Run Unit Tests
         run: cd TP4 && ceedling clobber gcov:all utils:gcov
       - name: Test Report
