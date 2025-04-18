@@ -69,10 +69,13 @@
 
     # Report options (You'll want to choose one stdout option, but may choose multiple stored options if desired)
     #- report_build_warnings_log
-    - report_tests_gtestlike_stdout
-    - report_tests_ide_stdout
+    #- report_tests_gtestlike_stdout
+    - stdout_gtestlike_tests_report
+    - stdout_ide_tests_report  
+    - stdout_pretty_tests_report
+    #- report_tests_ide_stdout
     #- report_tests_log_factory
-    - report_tests_pretty_stdout
+    #- report_tests_pretty_stdout
     #- report_tests_raw_output_log
     #- report_tests_teamcity_stdout
 
