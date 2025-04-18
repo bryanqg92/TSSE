@@ -20,9 +20,9 @@ jobs:
       - uses: actions/setup-python@v4
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "2.7"
+          ruby-version: "3.2.3"
       - name: Install Ceedling
-        run: gem install ceedling -v 0.31.1
+        run: gem install ceedling -v 1.0.1
       - name: install GCov Report
         run: |
           sudo apt-get install lcov gcovr
