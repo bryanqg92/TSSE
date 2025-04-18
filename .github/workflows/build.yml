@@ -34,7 +34,7 @@ jobs:
         if: success() || failure()
         with:
           name: Ceedling uNit Tests
-          path: TP4/build/artifacts/gcov/junit_tets_report.xml
+          path: TP4/build/artifacts/gcov/junit_tests_report.xml
           reporter: jest-junit
       - name: Code Coverage report
         uses: irongut/CodeCoverageSummary@v1.3.0
