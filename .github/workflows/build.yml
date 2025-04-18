@@ -26,7 +26,7 @@ jobs:
       - name: install GCov Report
         run: sudo apt-get install lcov
       - name: Run Unit Tests
-        run: cd TP4 && ceedling clobber gcov:all #utils:all
+        run: cd TP4 && ceedling clobber gcov:all utils:all
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
