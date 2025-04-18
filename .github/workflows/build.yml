@@ -28,7 +28,7 @@ jobs:
           sudo apt-get install lcov gcovr
           pip install gcovr
       - name: Run Unit Tests
-        run: cd TP4 && ceedling clobber gcov:all utils:gcov
+        run: cd TP4 && ceedling clobber gcov:all
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
