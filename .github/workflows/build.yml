@@ -35,7 +35,7 @@ jobs:
         with:
           name: Ceedling uNit Tests
           path: TP4/build/artifacts/gcov/junit_tests_report.xml
-          reporter: jest-junit
+          reporter: junit
       - name: Code Coverage report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
