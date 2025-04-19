@@ -54,5 +54,5 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           recreate: true
-          path: code-coverage-result.md
-      
+          path: code-coverage-results.md  # Make sure this matches the actual filename
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
